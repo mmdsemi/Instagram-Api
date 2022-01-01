@@ -392,6 +392,14 @@ transition: 0.3s;
     }
     .active_he{
         color: gray;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .active_he i {
+        position: relative;
+        margin-left: 5px;
+        top: 2px;
+        color: var(--purple);
     }
     .active_admin{
         margin-top: 15px;
@@ -401,6 +409,7 @@ transition: 0.3s;
         padding: 5px 10px;
         border: none;
         font-size: 14px;
+        width: 120px;
     }
     .zero-configuration{
         color: #727E8C !important;
@@ -432,4 +441,10 @@ transition: 0.3s;
         border-radius: 3px;
         font-size: 13px;
         padding: 3px 5px;
+    }
+    .fa-check{
+        color: green;
+    }
+    .fa-times{
+        color: rgb(165, 0, 0);
     }
