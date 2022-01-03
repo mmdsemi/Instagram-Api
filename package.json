@@ -1,0 +1,30 @@
+{
+  "name": "instagram-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LilMmd/Instagram-Api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LilMmd/Instagram-Api/issues"
+  },
+  "homepage": "https://github.com/LilMmd/Instagram-Api#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-ejs-layouts": "^2.5.1",
+    "http": "^0.0.1-security",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
+  }
+}
