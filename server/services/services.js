@@ -1,6 +1,3 @@
 exports.homeroutes = (req , res)=>{
-        res.render("index");
-} 
-exports.red = (req , res)=>{
-    res.render("red");
+        res.render("index.ejs" , { layout : "layouts/subset_header"});
 } 

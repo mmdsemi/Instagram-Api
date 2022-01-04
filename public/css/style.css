@@ -245,7 +245,7 @@ transition: 0.3s;
           font-size: 16px;
       }
       .subset--admin li i{
-        color: rgb(245, 82, 82);
+        color: rgb(245, 82, 82) !important;
       }
       /* Login Page Start */
       .login-form{

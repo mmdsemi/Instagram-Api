@@ -7,10 +7,9 @@ const path = require("path")
 const http = require("http").createServer(app);
 const Layouts = require("express-ejs-layouts")
  
-app.use(Layouts)
-app.set("view engine" , "ejs")
-app.set("views" , "./layout/index")
 
+app.set("view engine" , "ejs")
+app.use(Layouts)
 app.use(express.static(__dirname + "/public"));
 
 
