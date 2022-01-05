@@ -225,6 +225,22 @@ transition: 0.3s;
           padding: 8px !important;
           transition: 0.3s;
       }
+      .collapse-header ul{
+          padding: 0px;
+          
+      }
+      .collapse-header ul li{
+          list-style: none;
+          margin-bottom: 10px;
+          background-color: whitesmoke;
+          padding: 5px;
+          border-radius: 5px;
+      }
+      .collapse-header ul li a{
+        color: var(--dark);
+        font-size: 15px;
+        
+      }
       .card-header:hover{
           background-color: #f1f1f1;
       }
@@ -232,9 +248,18 @@ transition: 0.3s;
       .card{
           border: none !important;
       }
+   
+   
+      .senior--admin li i{
+        color: lightgreen !important;
+      }
+      .senior--admin .collapse-icon [data-toggle="collapse"]::before {
+        color: lightgreen ;
+      }
+     
       .card-header[aria-expanded="true"]{
         background-color: var(--purple);
-        color: #fff;
+        color: #fff ;
       }
       .nav-logohead{
           margin-top: 5rem;
@@ -244,9 +269,7 @@ transition: 0.3s;
       .navmenu-item{
           font-size: 16px;
       }
-      .subset--admin li i{
-        color: rgb(245, 82, 82) !important;
-      }
+    
       /* Login Page Start */
       .login-form{
         background:#fff;
