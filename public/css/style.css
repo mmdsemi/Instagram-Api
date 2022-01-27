@@ -23,7 +23,7 @@ body{
      font-family:shabnam !important ;
  }
 a{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 header{
     padding: 10px;
@@ -294,17 +294,14 @@ transition: 0.3s;
   top: 3px;
   margin-right: 15px;
       }
-      .login-form form label{
-          color:var(--dark);
-          font-size: 15px;
-          margin-bottom: 6px;
-      }
+    
      .login-form.sign-up{
          width: 500px;
+         top: 50%;
      }
-      .login-form form input{
-          margin-bottom: 15px;
-          width: 100%;
+      .login-form form input ,   .login-form form select{
+  
+          width: 90%;
           border: 1px solid #f1f1f1;
           border-radius: 5px;
           padding: 10px 5px;
@@ -326,14 +323,31 @@ transition: 0.3s;
           border-radius: 3px;
           padding: 10px 5px;
           border: none;
-      
+
       }
+     
       .login-form form i {
           color: var(--purple);
           margin-left: 5px;
       }
       .login-form form button:hover{
         background-color:rgb(252, 16, 252);
+      }
+      .register-btn{
+          display: inline-block;
+        width: 100%;
+      margin-top: 5px;
+      text-align: center;
+        color: var(--purple);
+        background-color: transparent;
+        border-radius: 3px;
+        padding: 8px 5px;
+        border: 1px solid var(--purple);
+
+      }
+      .register-btn:hover{
+        background-color:var(--purple);
+        color: #fff;
       }
       .forgoten-password a{
           color: gray;
@@ -473,3 +487,74 @@ transition: 0.3s;
     .fa-times{
         color: rgb(165, 0, 0);
     }
+    .errs-show{
+        color:#fff;
+        display: block;
+        margin-bottom: 5px;
+        background-color: rgb(248, 165, 165);
+        border-radius: 3px;
+        padding: 5px;
+        font-size: 13px;
+    }
+    @media (max-width : 767px) {
+
+        .login-form.sign-up{
+            width: 95%;
+        }
+    }
+    .exit-btn {
+        padding: 5px;
+        list-style: none;
+    }
+    .exit-btn li a{
+        font-weight: bold;
+        display: inline-block;
+        width: 100%;
+        background-color: rgb(255, 200, 98);
+        color: #fff;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+
+
+
+    .tabs-btns ul{
+        list-style: none;
+        padding: 0;
+      }
+      .tabs-btns{
+        border-bottom: 1px solid #f1f1f1;
+        margin-bottom: 15px;
+      }
+      .tabs-btns ul li{
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+      }
+      .tabs-btns ul li a{
+        color: var(--mlinks);
+        display: inline-block;
+        width: 100%;
+        font-size: 17px;
+        padding: 10px 0px;
+        background: #f1f1f1;
+      }
+      .tabs-btns ul li a.active {
+      background: var(--purple);
+      color: #fff;
+      }
+      .main-tab-content{
+        display: none;
+      }
+      
+      .main-tab-content.active{
+        display: block;
+      }
+      .form-inps div{
+          position: relative;
+          top: 3px;
+          font-size: 11px;
+          color: gray;
+      }
+      .form-inps{margin-bottom: 15px;}

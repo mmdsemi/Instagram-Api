@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../public/css/style.css">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -22,17 +23,26 @@
             <div class="form-head border-bottom pb-2 mb-2">
                 <span>ورود</span> <i class="fas fa-sign-in-alt"></i>
             </div>
-            <form>
-                <i class="fas fa-user-alt"></i>
-                <label>نام کاربری : </label>
-                <input type="text" placeholder="نام کاربری خود را وارد کنید" name="username"><br>
-                <i class="fas fa-lock"></i> <label>رمز عبور : </label><br>
-                <input type="password" placeholder="پسورد خود را وارد کنید" name="password"><br>
+            <form method="POST" action="/login">
+                <% if(typeof   msg !== "undefined") {%>
+                <span class="errs-show"> <%= msg  %></span>
+                <% }%>
+                <div class="form-inps">
+                    <i class="fas fa-user-alt"></i>
+
+                    <input type="text" placeholder="نام کاربری خود را وارد کنید" name="username">
+                </div>
+                <div class="form-inps">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="پسورد خود را وارد کنید" name="password">
+                </div>
                 <button type="submit" class="login-btn">ورود</button>
             </form>
+            <a href="/register" class="register-btn">ثبت نام</a>
             <div class="forgoten-password">
                 <a href="#">فراموشی رمز عبور</a>
             </div>
+
         </div>
     </div>
 
