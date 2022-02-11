@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const services = require("../services/services");
-const controller = require("../controller/controller");
+const controller = require("../controller/AuthController");
 const { check } = require("express-validator");
 
 router.get("/", services.homeroutes);
-
 router.get("/login", services.login);
 router.get("/register", services.register);
 router.get("/logout", (req, res) => {
@@ -14,7 +13,6 @@ router.get("/logout", (req, res) => {
 });
 
 router.get("/not_active", services.not_active);
-
 router.post(
   "/register",
   [
@@ -46,7 +44,4 @@ router.post(
 
 router.post("/login", controller.Auth_login);
 
-router.use("*", (req, res, next) => {
-  res.status(401).send("404 not Found");
-});
 module.exports = router;

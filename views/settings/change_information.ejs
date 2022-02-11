@@ -1,0 +1,80 @@
+ <main>
+
+     <div class="container">
+         <div class="row">
+             <div class="page-name">
+                 <h6>
+                     تنظیمات
+                 </h6>
+             </div>
+             <div class="col-lg-12 pb-5">
+                 <div class="table-responsive">
+                     <div class="table-head mb-4">
+                         <h6>تغییر اطلاعات شخصی</h6>
+                     </div>
+                     <div class="change_alerts2"></div>
+                     <form action="/changeinfo/" method="POST" id="change_information">
+                         <div class="form-inps">
+
+                             <div class=" active_he"> <i class="fas fa-lock"></i> نام</div>
+                             <input type="text" class="form-control activate_in mb-3" value="<%= user[0].name%>"
+                                 name="changing_name" id="c_name">
+                         </div>
+                         <div class="form-inps">
+                             <div class=" active_he"> <i class="fas fa-lock"></i> نام خانوادگی</div>
+                             <input type="text" class="form-control activate_in mb-3" value="<%= user[0].family%>"
+                                 name="changing_family" id="c_family">
+                         </div>
+                         <div class="form-inps">
+                             <div class=" active_he"> <i class="fas fa-lock"></i>نام گروه</div>
+                             <input type="text" class="form-control activate_in mb-3" value="<%= user[0].group_name%>"
+                                 name="changing_group" id="c_group">
+                         </div>
+                         <button type="submit" class="active_admin">تغییر اطلاعات</button>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </main>
+
+ <script>
+     const changeinfo_form = document.getElementById("change_information");
+
+     changeinfo_form.addEventListener("submit", (e) => {
+         e.preventDefault();
+
+         let cname = document.getElementById("c_name");
+         let cfamily = document.getElementById("c_family");
+         let cgroup = document.getElementById("c_group");
+
+         const passalerts2 = document.querySelector(".change_alerts2");
+         const adata = {
+             changename: cname.value,
+             changefamily: cfamily.value,
+             changegroup: cgroup.value
+         }
+         fetch("http://localhost:8080/changeinfo/", {
+                 method: "POST",
+                 headers: {
+                     "Content-Type": "application/json",
+                 },
+                 body: JSON.stringify(adata),
+             })
+             .then((response) => {
+                 return response.json();
+             })
+             .then((e) => {
+                 if (e.errors.length < 1) {
+                     passalerts2.innerHTML +=
+                         `<div class="alert alert-success alert-dismissible show" role="alert">اطلاعات تغییر یافت<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>`;
+                 } else {
+                     for (var i = 0; i < e.errors.length; i++) {
+                         passalerts2.innerHTML += `<span class="errs-show">${e.errors[i].msg}</span>`;
+                     }
+                 }
+             })
+         passalerts2.innerHTML = "";
+
+     })
+ </script>

@@ -551,10 +551,49 @@ transition: 0.3s;
       .main-tab-content.active{
         display: block;
       }
-      .form-inps div{
+      .show-err-admin{
           position: relative;
           top: 3px;
           font-size: 11px;
           color: gray;
       }
       .form-inps{margin-bottom: 15px;}
+      .tag-starts-informaion{
+          background-color: rgb(225, 217, 255) ;
+          border-radius: 5px;
+ 
+          padding: 15px;
+      }
+      .box-heads{
+          color: rgb(214, 70, 250) ;
+          border-bottom: 1px solid lightskyblue;
+          padding-bottom: 10px;
+      }
+      .box-heads span{
+          margin-right: 10px;
+          font-size: 14px;
+      }
+      .box-body{
+          padding-top: 10px;
+        color: rgb(214, 70, 250) ;
+      }
+      .box-body .box-row i{
+          font-size: 13px;
+          margin-left: 5px;
+      }
+      .box-body .box-row span{
+        font-size: 14px;
+    }
+    .close {
+        background: transparent;
+        border: none;
+        right: 5px;
+        position: absolute;
+      }
+
+      .accept_admin{
+          background-color: #fff;
+          padding: 3px 5px;
+          border-radius: 5px;
+          box-shadow:0px 0px 3px -1px gray;
+      }

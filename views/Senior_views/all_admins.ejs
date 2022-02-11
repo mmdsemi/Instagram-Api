@@ -1,0 +1,50 @@
+ <main>
+
+     <div class="container">
+         <div class="row">
+             <div class="page-name">
+                 <h6>
+                     مدیران
+                 </h6>
+             </div>
+             <div class="col-lg-12 pb-5">
+                 <div class="table-responsive">
+                     <div class="table-head mb-4">
+                         <h6>نمایش همه مدیران</h6>
+                     </div>
+                     <table class="table zero-configuration table-striped">
+                         <thead>
+                             <tr>
+                                 <th>#</th>
+                                 <th>نام گروه حمایتی</th>
+                                 <th>نمایش</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+
+                             <% All_subs.forEach((subset , i )=> { %>
+                             <tr>
+                                 <td><%= i+1  %> </td>
+                                 <td><%= subset.group_name %> </td>
+                                 <td><a href="/senior/admin_information?id=<%=subset.id %>" class="show_more_user "><i
+                                             class="fas fa-eye"></i> </a>
+                                 </td>
+                             </tr>
+                             <%      }); %>
+
+                         </tbody>
+                         <tfoot>
+                             <tr>
+                                 <th>#</th>
+                                 <th>نام گروه حمایتی</th>
+                                 <th>نمایش</th>
+                             </tr>
+                         </tfoot>
+                     </table>
+                 </div>
+             </div>
+
+         </div>
+     </div>
+
+ </main>

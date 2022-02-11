@@ -1,275 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
+ <main>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پست های حذف شده </title>
-    <link rel="stylesheet" href="../../public/css/plugins/vendors.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../public/css/plugins/datatables.min.css">
-    <link rel="stylesheet" href="../../public/css/plugins/bootstrap-extended.min.css">
+     <div class="container">
+         <div class="row">
+             <div class="page-name">
+                 <h6>
+                     گزارشات
+                 </h6>
+             </div>
+             <div class="col-lg-12 pb-5">
+                 <div class="table-responsive">
+                     <div class="table-head mb-4">
+                         <h6> پست های حذف شده </h6>
+                     </div>
+                     <table class="table zero-configuration table-striped">
+                         <thead>
+                             <tr>
+                                 <th>#</th>
+                                 <th>پیج اصلی</th>
+                                 <th>علت حذف</th>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+                             </tr>
+                         </thead>
+                         <tbody>
 
-    <link rel="stylesheet" href="../../public/css/style.css">
-</head>
+                             <tr>
+                                 <td>1</td>
+                                 <td>mmdbqri</td>
+                                 <td><span class="deleted_reason">نیست</span></td>
 
-<body>
+                             </tr>
+                             <tr>
+                                 <td>2</td>
+                                 <td>instagram</td>
+                                 <td><span class="deleted_reason">خارج</span></td>
+                             </tr>
+                             <tr>
+                                 <td>3</td>
+                                 <td>youtube</td>
+                                 <td><span class="deleted_reason">محرومیت</span></td>
+                             </tr>
+                             <tr>
+                                 <td>4</td>
+                                 <td>elun_musk</td>
+                                 <td><span class="deleted_reason">محروم شده</span></td>
+                             </tr>
+                             <tr>
+                                 <td>5</td>
+                                 <td>reza_1235</td>
+                                 <td><span class="deleted_reason">وجود ندارد</span></td>
+                             </tr>
+                             <tr>
+                                 <td>6</td>
+                                 <td>user_135</td>
+                                 <td><span class="deleted_reason">منقظی شده</span></td>
+                             </tr>
+                             <tr>
+                                 <td>7</td>
+                                 <td>mohammadreza_nosrat</td>
+                                 <td><span class="deleted_reason">ثبت نشده</span></td>
+                             </tr>
 
-    <header class="border-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-md-9 col-lg-8  ">
-                    <div class="menu-links desktop-menu">
-                        <ul class="parent-menu">
-                            <li class="parent-items"><a href="#" class="active">صفحه اصلی</a> </li>
-                            <li class="parent-items"><a href="#">مدیریت کاربران</a><i class="fas fa-angle-down"></i> 
-                                <ul class="child-menu">
-                                    <li><a href="#">همه کاربران</a></li>
-                                    <li><a href="#">جستجوی لایک کننده</a></li>
-                               
-                                </ul>
+                         </tbody>
+                         <tfoot>
+                             <tr>
+                                 <th>#</th>
+                                 <th>پیج اصلی</th>
+                                 <th>زمان انتشار پست</th>
+                             </tr>
+                         </tfoot>
+                     </table>
+                 </div>
+             </div>
 
-                            </li>
-                            <li class="parent-items"><a href="#">مدیران</a><i class="fas fa-angle-down"></i> 
-                                <ul class="child-menu">
-                                    <li><a href="#">فعال سازی مدیر جدید</a></li>
-                                    <li><a href="#">همه مدیران</a></li>
-                         
-                                </ul>
+         </div>
+     </div>
 
-                            </li>
-                            <li class="parent-items"><a href="#">گزارشات کلی</a><i class="fas fa-angle-down"></i> 
-                                <ul class="child-menu">
-                                    <li><a href="#">گزارش محروم شده ها</a></li>
-                                   
-                                </ul>
-
-                            </li>
-                            <li class="parent-items"><a href="#">گزارشات تگ جاری</a><i class="fas fa-angle-down"></i> 
-                                <ul class="child-menu">
-                                    <li><a href="#">شرکت کنندگان مدیران</a></li>
-                                    <li><a href="#">پست های مجاز</a></li>
-                                    <li><a href="#">پست های حذف شده</a></li>
-                                    <li><a href="#">میزان حمایت</a></li>
-                                </ul>
-
-                            </li>
-                            <li class="parent-items"> <a href="#">مدیریت بررسی ها</a><i class="fas fa-angle-down"></i> 
-                                <ul class="child-menu">
-                                    <li><a href="#">قطعی با محرومیت</a></li>
-                                    <li><a href="#">قطعی بدون محرومیت</a></li>
-                                    <li><a href="#">پست های حذف شده</a></li>
-                                    <li><a href="#">بررسی جدید</a></li>
-                                    <li><a href="#">مدیریت پیج مرجع</a></li>
-                                    <li><a href="#"> پیج مرجع جدید</a></li>
-                                </ul>
-                            </li>
-                            <li class="parent-items"> <a href="#">تنظیمات</a><i class="fas fa-angle-down"></i> 
-                                <ul class="child-menu">
-                                    <li><a href="#">تغییر کلمه عبور</a></li>
-                                    <li><a href="#">تغییر مشخصات فردی</a></li>
-                          
-                                </ul>
-                            </li>
-                    
-                        </ul>
-                    </div>
-                    <div class="mobile-menu">
-                        <div class="menu-btn">
-                            <div class="menu-lines"></div>
-                            <div class="menu-lines"></div>
-                            <div class="menu-lines"></div>
-                        </div>
-                        <div class="navigation-menu">
-                            <div class="close-area ">
-                                <a href="javascript:void(0)" class="closebtn">&times;</a>
-                            </div>
-                            <div class="nav-logohead">
-                                <h5>منوی مدیریت(Logo)</h5>
-                            </div>
-                            <div class="accordion collapse-icon accordion-icon-rotate" id="accordionWrapa2">
-                                <div class="card collapse-header">
-                                    <div id="heading5" class="card-header" data-toggle="collapse"
-                                        data-target="#accordion5" aria-expanded="false" aria-controls="accordion5"
-                                        role="tablist">
-                                        <span class="collapse-title">
-                                            <span class="align-middle navmenu-item">مدیریت اصلی</span>
-                                        </span>
-                                    </div>
-                                    <div id="accordion5" role="tabpanel" data-parent="#accordionWrapa2"
-                                        aria-labelledby="heading5" class="collapse">
-                                        <div class="card-content">
-                                            <div class="card-body">
-                                                test 1
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card collapse-header">
-                                    <div id="heading6" class="card-header" data-toggle="collapse" role="button"
-                                        data-target="#accordion6" aria-expanded="false" aria-controls="accordion6">
-                                        <span class="collapse-title">
-
-                                            <span class="align-middle navmenu-item">اخطار ها</span>
-                                        </span>
-                                    </div>
-                                    <div id="accordion6" role="tabpanel" data-parent="#accordionWrapa2"
-                                        aria-labelledby="heading6" class="collapse" aria-expanded="false">
-                                        <div class="card-content">
-                                            <div class="card-body">
-                                                test 2
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card collapse-header">
-                                    <div id="heading7" class="card-header" data-toggle="collapse" role="button"
-                                        data-target="#accordion7" aria-expanded="false" aria-controls="accordion7">
-                                        <span class="collapse-title">
-
-                                            <span class="align-middle navmenu-item">مدیریت کاربران</span>
-                                        </span>
-                                    </div>
-                                    <div id="accordion7" role="tabpanel" data-parent="#accordionWrapa2"
-                                        aria-labelledby="heading7" class="collapse" aria-expanded="false">
-                                        <div class="card-content">
-                                            <div class="card-body">
-                                                test 3
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card collapse-header">
-                                    <div id="heading8" class="card-header" data-toggle="collapse" role="button"
-                                        data-target="#accordion8" aria-expanded="false" aria-controls="accordion8">
-                                        <span class="collapse-title">
-
-                                            <span class="align-middle navmenu-item">مدیریت مالی</span>
-                                        </span>
-                                    </div>
-                                    <div id="accordion8" role="tabpanel" data-parent="#accordionWrapa2"
-                                        aria-labelledby="heading8" class="collapse" aria-expanded="false">
-                                        <div class="card-content">
-                                            <div class="card-body">
-                                                test 4
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="overley"></div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-4  ">
-                    <div class="logo-personal">
-                        <div class="logo-area float-start">
-                            <img src="../public/imgs/logo/logosn.png" width="50px" alt="">
-                        </div>
-                        <div class="personal-area d-inline-block">
-                            <span class="d-inline-block p-1 border-bottom">محمد باقری</span>
-                            <span class="d-block text-center tag-name">mmdbqri</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-
-        <div class="container">
-            <div class="row">
-                <div class="page-name">
-                    <h6>
-                         گزارشات
-                    </h6>
-                </div>
-                <div class="col-lg-12 pb-5">
-                    <div class="table-responsive">
-                        <div class="table-head mb-4">
-                            <h6> پست های حذف شده </h6>
-                        </div>
-                        <table class="table zero-configuration table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>پیج اصلی</th>
-                                    <th>علت حذف</th>
-                                 
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td>1</td>
-                                    <td>mmdbqri</td>
-                                    <td><span class="deleted_reason">نیست</span></td>
-                         
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>instagram</td>
-                                    <td><span class="deleted_reason">خارج</span></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>youtube</td>
-                                    <td><span class="deleted_reason">محرومیت</span></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>elun_musk</td>
-                                    <td><span class="deleted_reason">محروم شده</span></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>reza_1235</td>
-                                    <td><span class="deleted_reason">وجود ندارد</span></td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>user_135</td>
-                                    <td><span class="deleted_reason">منقظی شده</span></td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>mohammadreza_nosrat</td>
-                                    <td><span class="deleted_reason">ثبت نشده</span></td>
-                                </tr>
-
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>#</th>
-                                    <th>پیج اصلی</th>
-                                    <th>زمان انتشار پست</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </main>
-
-    <script src="../../public/js/plugins/vendors.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-    </script>
-    <script src="../../public/js/plugins/datatables.min.js"></script>
-    <script src="../../public/js/plugins/dataTables.bootstrap4.min.js"></script>
-    <script src="../../public/js/datatable.js"></script>
-    <script src="../../public/js/main.js"></script>
-</body>
-
-</html>
+ </main>

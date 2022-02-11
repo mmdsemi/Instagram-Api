@@ -1,0 +1,54 @@
+ <main>
+
+     <div class="container">
+         <div class="row">
+             <div class="page-name">
+                 <h6>
+                     مدیران
+                 </h6>
+             </div>
+             <div class="col-lg-12 pb-5">
+                 <div class="table-responsive">
+                     <div class="table-head mb-4">
+                         <h6>فعال سازی ادمین جدید</h6>
+                     </div>
+
+                     <table class="table zero-configuration table-striped">
+                         <thead>
+                             <tr>
+                                 <th>#</th>
+                                 <th>نام و نام خانوادگی </th>
+                                 <th>نام کاربری</th>
+                                 <th>عملیات</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <% Not_active_user.forEach((actv_user , i )=> { %>
+                             <tr>
+                                 <td><%= i+1  %> </td>
+                                 <td><%= actv_user.name + " " + actv_user.family  %> </td>
+                                 <td><%= actv_user.username  %> </td>
+                                 <td><a href="#" class="show_more_user accept_admin" data-id="<%= actv_user.id %>"><i
+                                             class="fas fa-check"></i> </a>
+                                 </td>
+                             </tr>
+                             <%      }); %>
+                         </tbody>
+                         <tfoot>
+                             <tr>
+                                 <th>#</th>
+                                 <th>نام و نام خانوادگی </th>
+                                 <th>نام کاربری</th>
+                                 <th>عملیات</th>
+                             </tr>
+                         </tfoot>
+                     </table>
+
+
+                 </div>
+             </div>
+
+         </div>
+     </div>
+
+ </main>

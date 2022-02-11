@@ -1,0 +1,76 @@
+ <main>
+
+     <div class="container">
+         <div class="row">
+             <div class="page-name">
+                 <h6>مدیریت مدیران
+                 </h6>
+             </div>
+             <div class="col-lg-12 pb-5">
+                 <div class="table-responsive">
+                     <div class="table-head mb-3 border-bottom pb-2">
+
+                         <h6> <i class="fas fa-user-alt"></i> نمایش اطلاعات مدیر </h6>
+                     </div>
+                     <div class="scnd-head mb-3">
+                         <a href="#" class="edit-btn">ویرایش<i class="fas fa-pencil-alt"></i></a>
+                         <a href="#" class="disable-btn">غیرفعال <i class="fas fa-times"></i></a>
+                         <a href="#" class="delete-btn">حذف <i class="fas fa-minus-square"></i></a>
+
+                     </div>
+                     <table class="table table-striped zero-configuration">
+
+                         <tbody>
+                             <tr>
+                                 <td>نام کاربری</td>
+                                 <td><%= admin_info[0].username  %> </td>
+                             </tr>
+                             <tr>
+                                 <td>نام</td>
+                                 <td><%= admin_info[0].name  %></td>
+                             </tr>
+                             <tr>
+                                 <td>نام خانوادگی</td>
+                                 <td><%= admin_info[0].family  %></td>
+                             </tr>
+                             <tr>
+                                 <td>نام گروه حمایتی</td>
+                                 <td><%= admin_info[0].group_name  %></td>
+                             </tr>
+                             <tr>
+                                 <td>تعداد کاربران </td>
+                                 <td>-</td>
+                             </tr>
+                             <tr>
+                                 <td>تعداد اخطاری ها </td>
+                                 <td>-</td>
+                             </tr>
+                             <tr>
+                                 <td>تعداد محروم ها</td>
+                                 <td>-</td>
+                             </tr>
+                             <tr>
+                                 <td>تاریخ ثبت نام </td>
+                                 <td><%= admin_info[0].registered_time  %> </td>
+                             </tr>
+                             <tr>
+                                 <td>وضعیت</td>
+                                 <td>
+                                     <% if(admin_info[0].active_status == "active"){ %>
+                                     فعال
+                                     <% }else{ %>
+                                     غیر فعال
+
+                                     <% } %>
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+
+             </div>
+
+         </div>
+     </div>
+
+ </main>

@@ -15,3 +15,20 @@ function closenav() {
   overley.style.zIndex = "-1";
   overley.style.opacity = "0";
 }
+
+$deletebtn = $(".accept_admin");
+$deletebtn.click(function () {
+  var id = $(this).attr("data-id");
+
+  var request2 = {
+    url: `http://localhost:8080/senior/active_admin/${id}`,
+    method: "PUT",
+  };
+
+  if (confirm("با قبول کردن این ادمین موافقت دارید؟")) {
+    $.ajax(request2).done((res) => {
+      alert("ادمین با موفقیت تایید شد");
+      location.reload();
+    });
+  }
+});

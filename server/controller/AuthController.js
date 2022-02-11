@@ -14,7 +14,7 @@ exports.Auth_register = async (req, res) => {
       phonenumber,
       password,
     } = req.body;
-    const Reg_Time = new Date();
+    const Reg_Time = Date.now();
     const user_informations = [
       [
         name,
@@ -41,10 +41,11 @@ exports.Auth_register = async (req, res) => {
 
 exports.Auth_senior_register = async (req, res) => {
   const validate_result = validationResult(req);
+
   if (validate_result.isEmpty()) {
     const { name, familyname, group_name, tag_name, username, password } =
       req.body;
-    const Reg_Time = new Date();
+    const Reg_Time = Date.now();
     const user_informations = [
       [
         name,
@@ -70,7 +71,6 @@ exports.Auth_senior_register = async (req, res) => {
 
 exports.Auth_login = async (req, res) => {
   const { username, password } = req.body;
-
   const { results: user } = await con.query(
     "SELECT * FROM users WHERE username='" +
       username +
@@ -81,12 +81,18 @@ exports.Auth_login = async (req, res) => {
 
   if (user.length) {
     if (user[0].active_status == "active") {
-      req.session.loggedin = true;
-      res.redirect("/");
+      if (user[0].user_type == "senior") {
+        req.session.loggedin_senior = true;
+        req.session.User = user;
+        res.redirect("/senior");
+      } else if (user[0].user_type == "subset") {
+        req.session.loggedin_subset = true;
+        req.session.User = user;
+        res.redirect("/subset");
+      }
     } else {
       req.session.not_active_log = true;
       req.session.user = user[0];
- 
       res.redirect("/not_active");
     }
   } else {
